@@ -221,10 +221,10 @@
         
         <div class="input-section" id="inputSection">
             <div class="input-group">
-                <label for="amount" id="amountLabel">请输入增值金额</label>
-                <input type="number" id="amount" placeholder="请输入增值金额" min="1">
+                <label for="amount" id="amountLabel">請輸入增值金額</label>
+                <input type="number" id="amount" placeholder="請輸入增值金額" min="1">
             </div>
-            <button class="confirm-btn" id="confirmBtn">确认增值</button>
+            <button class="confirm-btn" id="confirmBtn">確認增值</button>
         </div>
 
         <div class="loading-section" id="loadingSection">
@@ -243,7 +243,7 @@
             <div class="receipt-item" id="usageItem">使用方法: 在遊戲中輸入: /z @s <span id="usageOrderNumber"></span></div>
             <div class="receipt-buttons">
                 <button class="receipt-btn print-btn" id="printBtn">打印</button>
-                <button class="receipt-btn download-btn" id="downloadBtn">下载</button>
+                <button class="receipt-btn download-btn" id="downloadBtn">下載</button>
             </div>
         </div>
     </div>
@@ -251,16 +251,16 @@
     <script>
         const translations = {
             zh: {
-                amountLabel: '请输入增值金额',
-                amountPlaceholder: '请输入增值金额',
-                confirmBtn: '确认增值',
+                amountLabel: '請輸入增值金額',
+                amountPlaceholder: '請輸入增值金額',
+                confirmBtn: '確認增值',
                 loadingText: '正在支付中...',
                 service: '服務: 增值',
                 deduction: '扣費: ',
                 order: '訂單號: ',
-                usage: '使用方法: 在遊戲中輸入: /z @s ',
+                usage: '使用方法: 在遊戲中輸入: /z ',
                 print: '打印',
-                download: '下载',
+                download: '下載',
                 receiptTitle: '增值服務收據'
             },
             ja: {
@@ -271,7 +271,7 @@
                 service: 'サービス: チャージ',
                 deduction: '差し引き: ',
                 order: '注文番号: ',
-                usage: '使用方法: ゲームで入力: /z @s ',
+                usage: '使用方法: ゲームで入力: /z ',
                 print: '印刷',
                 download: 'ダウンロード',
                 receiptTitle: 'チャージサービス領収書'
@@ -284,7 +284,7 @@
                 service: 'Service: Recharge',
                 deduction: 'Deduction: ',
                 order: 'Order Number: ',
-                usage: 'Usage: Enter in game: /z @s ',
+                usage: 'Usage: Enter in game: /z ',
                 print: 'Print',
                 download: 'Download',
                 receiptTitle: 'Recharge Service Receipt'
@@ -327,7 +327,7 @@
         document.getElementById('confirmBtn').addEventListener('click', function() {
             const amount = document.getElementById('amount').value;
             if (!amount || amount <= 0) {
-                alert('请输入有效的增值金额');
+                alert('請輸入有效的增值金額');
                 return;
             }
 
@@ -358,7 +358,7 @@
 服務: 增值
 扣費: ${document.getElementById('amount').value}元
 訂單號: ${orderNumber}
-使用方法: 在遊戲中輸入: /z @s ${orderNumber}
+使用方法: 在遊戲中輸入: /z ${orderNumber}
 ==================`;
             const blob = new Blob([receiptContent], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
